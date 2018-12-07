@@ -1,0 +1,26 @@
+{
+  "extends": "tipsi",
+  "globals": {
+    "device": false,
+    "expect": false,
+    "waitFor": false,
+    "element": false,
+    "by": false,
+    "describe": false,
+    "it": false,
+    "before": false
+  },
+  "rules": {
+    "semi": [2, "never"],
+    "arrow-body-style": "off",
+    "no-console": "off",
+    "import/prefer-default-export": "off",
+    "react/sort-comp": "off",
+    "react/prop-types": "off",
+    "react/no-array-index-key": "off",
+    "no-plusplus": "off",
+    "camelcase": "off",
+    "no-nested-ternary": "off",
+    "no-shadow": "off"
+  }
+}
