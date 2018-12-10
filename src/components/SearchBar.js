@@ -11,7 +11,7 @@ export default class SearchBar extends React.Component {
   render() {
     return (
       <div className="ui segment">
-        <h4>Image search</h4>
+        <h4>Search</h4>
         <form onSubmit={this.onFormSubmit} className="ui form">
           <div className="field">
             <input

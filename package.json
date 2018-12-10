@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "eslint": "5.0.1",
-    "eslint-config-tipsi": "2.0.3",
     "axios": "^0.18.0",
     "faker": "^4.1.0",
     "react": "^16.6.3",
