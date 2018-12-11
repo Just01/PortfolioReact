@@ -1,10 +1,10 @@
 import React from 'react'
 import SearchBar from '../../components/SearchBar'
 import youtube from '../../api/youtube'
-import VideoList from './VideoList'
-import VideoDetail from './VideoDetail'
+import SongList from './SongList'
+import SongDetail from './SongDetail'
 
-export default class VideoContainer extends React.Component {
+export default class SongContainer extends React.Component {
   state = { data: [], selectedVideo: null }
 
   componentDidMount() {
@@ -31,10 +31,10 @@ export default class VideoContainer extends React.Component {
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
+              <SongDetail video={this.state.selectedVideo} />
             </div>
             <div className="five wide column">
-              <VideoList onSelect={this.onVideoSelect} videos={this.state.data}/>
+              <SongList onSelect={this.onVideoSelect} videos={this.state.data}/>
             </div>
           </div>
         </div>

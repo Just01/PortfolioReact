@@ -1,7 +1,7 @@
 import React from 'react'
 import unsplash from '../../api/unsplash'
 import SearchBar from '../../components/SearchBar'
-import ImageList from "../../components/ImageList"
+import ImageList from "./ImageList"
 
 export default class ImageContainer extends React.Component {
   state = { data: [] }
