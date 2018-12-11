@@ -1,24 +1,22 @@
 import React from 'react'
-import Spinner from "../../components/Spinner"
+import { connect } from 'react-redux'
 
-const SongDetail = ({ video }) => {
-  if (!video) {
-    return <Spinner/>
+const SongDetail = props => {
+  if (!props.song) {
+    return <div>Select a song!</div>
   }
 
-
-  const { title, description } = video.snippet
   return (
     <div>
-      <div className="ui embed">
-        <iframe title="video player" src={videoSrc} />
+      <div>
+        {props.song.title}
       </div>
-      <div className="ui segment">
-        <h4 className="ui header">{title}</h4>
-        <p>{description}</p>
-      </div>
+      {props.song.duration}
     </div>
   )
 }
+const mapStateToProps = (state) => {
+  return { song: state.selectedSong, }
+}
 
-export default SongDetail
+export default connect(mapStateToProps)(SongDetail)

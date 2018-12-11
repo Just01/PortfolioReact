@@ -1,11 +1,11 @@
 import React from 'react'
-import VideoContainer from "./containers/videoContainer/VideoContainer"
+import SongContainer from "./containers/songContainer/SongContainer"
 
 export default class App extends React.Component {
   render() {
     return (
       <div className="ui container">
-        <VideoContainer />
+        <SongContainer />
       </div>
     )
   }
