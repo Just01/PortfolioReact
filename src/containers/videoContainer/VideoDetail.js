@@ -3,7 +3,11 @@ import Spinner from "../../components/Spinner"
 
 const VideoDetail = ({ video }) => {
   if (!video) {
-    return <Spinner/>
+    return (
+      <div className="ui embed">
+        <Spinner message="Please choose the video!"/>
+      </div>
+    )
   }
 
   const videoSrc = `http://www.youtube.com/embed/${video.id.videoId}`

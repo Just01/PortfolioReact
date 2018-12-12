@@ -1,23 +1,13 @@
 import { combineReducers } from 'redux'
-
-const songsReducer = () => {
-  return [
-    { title: 'No scrubs', duration: '4:05'},
-    { title: 'Macarena', duration: '2:30'},
-    { title: 'All star', duration: '3:15'},
-    { title: 'I Want it That Way', duration: '1:45'},
-  ]
-}
-
-const selectedSongsReducer = (selectedSong = null, action) => {
-  if (action.type === 'SONG_SELECTED') {
-    return action.payload
-  }
-
-  return selectedSong
-}
+import {
+  songsReducer, selectedSongsReducer,
+  videoReducer, selectedVideoReducer
+} from "./MediaReducers"
 
 export default combineReducers({
   songs: songsReducer,
   selectedSong: selectedSongsReducer,
+
+  videos: videoReducer,
+  selectedVideo: selectedVideoReducer,
 })

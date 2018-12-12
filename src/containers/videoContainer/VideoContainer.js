@@ -1,40 +1,27 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import SearchBar from '../../components/SearchBar'
-import youtube from '../../api/youtube'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
+import { fetchVideo, selectVideo } from "../../actions/MediaActions"
 
-export default class VideoContainer extends React.Component {
-  state = { data: [], selectedVideo: null }
-
+class VideoContainer extends React.Component {
   componentDidMount() {
-    this.onSearchSubmit('cat')
-  }
-
-  onSearchSubmit = async (search) => {
-    const response = await youtube.get('/search', { params: { q: search } })
-    console.log(response)
-    this.setState({
-      data: response.data.items,
-      selectedVideo: response.data.items[0]
-    })
-  }
-
-  onVideoSelect = (video) => {
-    this.setState({ selectedVideo: video })
+    this.props.fetchVideo('cat')
   }
 
   render() {
+    const { videos, video, fetchVideo, selectVideo } = this.props
     return (
       <div className="ui container">
-        <SearchBar onSubmit={this.onSearchSubmit} />
+        <SearchBar onSubmit={search => fetchVideo(search)} />
         <div className="ui grid">
           <div className="ui row">
             <div className="eleven wide column">
-              <VideoDetail video={this.state.selectedVideo} />
+              <VideoDetail video={video} />
             </div>
             <div className="five wide column">
-              <VideoList onSelect={this.onVideoSelect} videos={this.state.data}/>
+              <VideoList onSelect={video => selectVideo(video)} videos={videos}/>
             </div>
           </div>
         </div>
@@ -42,3 +29,12 @@ export default class VideoContainer extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    video: state.selectedVideo,
+    videos: state.videos,
+  }
+}
+
+export default connect(mapStateToProps, { fetchVideo, selectVideo })(VideoContainer)
