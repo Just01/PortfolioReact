@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
 import {
   songsReducer, selectedSongsReducer,
-  videoReducer, selectedVideoReducer
+  videoReducer, selectedVideoReducer,
+  imageReducer, selectedImageReducer,
+  postsReducer,
 } from "./MediaReducers"
 
 export default combineReducers({
@@ -10,4 +12,9 @@ export default combineReducers({
 
   videos: videoReducer,
   selectedVideo: selectedVideoReducer,
+
+  images: imageReducer,
+  selectedImage: selectedImageReducer,
+
+  posts: postsReducer,
 })

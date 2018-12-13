@@ -7,7 +7,8 @@ import faker from 'faker'
 
 // this must be a children in div ui container comments
 
-const CommentDetail = () => {
+const CommentDetail = (props) => {
+  const { name, comment } = props
   return (
     <div className="comment">
       <a href="/" className="avatar">
@@ -15,12 +16,11 @@ const CommentDetail = () => {
       </a>
       <div className="content">
         <a href="/" className="author">
-          {faker.internet.userName()}
+          {name || faker.internet.userName()}
         </a>
       </div>
       <div className="metadata">
-        <span className="date">Today at 6:00PM</span>
-        <div className="text">{faker.random.words()}</div>
+        <div className="text">{comment || faker.random.words()}</div>
       </div>
     </div>
   )

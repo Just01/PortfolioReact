@@ -1,3 +1,5 @@
+// ********************* SONG *********************
+
 export const songsReducer = () => {
   return [
     { title: 'No scrubs', duration: '4:05'},
@@ -14,6 +16,7 @@ export const selectedSongsReducer = (selectedSong = null, action) => {
   return selectedSong
 }
 
+// ********************* VIDEO *********************
 
 export const videoReducer = (videos = null, action) => {
   switch (action.type) {
@@ -29,4 +32,33 @@ export const selectedVideoReducer = (selectedVideo = null, action) => {
     return action.payload
   }
   return selectedVideo
+}
+
+// ********************* IMAGE *********************
+
+export const imageReducer = (images = null, action) => {
+  switch (action.type) {
+    case 'FETCH_IMAGE':
+      return action.payload
+    default:
+      return images
+  }
+}
+
+export const selectedImageReducer = (selectedImage = null, action) => {
+  if (action.type === 'IMAGE_SELECTED') {
+    return action.payload
+  }
+  return selectedImage
+}
+
+// ********************* POST *********************
+
+export const postsReducer = (posts = [], action) => {
+  switch (action.type) {
+    case 'FETCH_POST':
+      return action.payload
+    default:
+      return posts
+  }
 }

@@ -7,7 +7,7 @@ import { fetchVideo, selectVideo } from "../../actions/MediaActions"
 
 class VideoContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchVideo('cat')
+    this.props.fetchVideo('learn ReactJS')
   }
 
   componentDidUpdate() {
