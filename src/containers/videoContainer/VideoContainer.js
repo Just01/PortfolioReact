@@ -10,6 +10,19 @@ class VideoContainer extends React.Component {
     this.props.fetchVideo('cat')
   }
 
+  componentDidUpdate() {
+    const { video, videos, selectVideo } = this.props
+    if (video) return
+    selectVideo(videos[0])
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { videos, selectVideo } = this.props
+    if (videos && videos !== nextProps.videos)  {
+      selectVideo(nextProps.videos[0])
+    }
+  }
+
   render() {
     const { videos, video, fetchVideo, selectVideo } = this.props
     return (
