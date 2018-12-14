@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPost } from '../../actions/MediaActions'
+import { fetchPostsAndUsers } from '../../actions/MediaActions'
 import PostItem from './PostItem'
 
 class PostContainer extends React.Component {
   componentDidMount() {
-    this.props.fetchPost()
+    this.props.fetchPostsAndUsers()
   }
 
   renderPostList = (posts) => {
@@ -32,4 +32,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPost })(PostContainer)
+export default connect(mapStateToProps, { fetchPostsAndUsers })(PostContainer)

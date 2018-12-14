@@ -3,11 +3,6 @@ import { connect } from 'react-redux'
 import { fetchUser } from '../../actions/MediaActions'
 
 class PostUserInfo extends React.Component {
-  componentDidMount() {
-    const { fetchUser, userId } = this.props
-    fetchUser(userId)
-  }
-
   render() {
     const { user } = this.props
     if (!this.props.user) return null
