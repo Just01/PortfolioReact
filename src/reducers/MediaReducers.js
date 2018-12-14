@@ -2,10 +2,10 @@
 
 export const songsReducer = () => {
   return [
-    { title: 'No scrubs', duration: '4:05'},
-    { title: 'Macarena', duration: '2:30'},
-    { title: 'All star', duration: '3:15'},
-    { title: 'I Want it That Way', duration: '1:45'},
+    { title: 'No scrubs', duration: '4:05' },
+    { title: 'Very cool song!', duration: '2:30' },
+    { title: 'All star', duration: '3:15' },
+    { title: 'I Want it That Way', duration: '1:45' },
   ]
 }
 
@@ -60,5 +60,14 @@ export const postsReducer = (posts = [], action) => {
       return action.payload
     default:
       return posts
+  }
+}
+
+export const usersReducer = (users = [], action) => {
+  switch (action.type) {
+    case 'FETCH_USER':
+      return [...users, action.payload]
+    default:
+      return users
   }
 }

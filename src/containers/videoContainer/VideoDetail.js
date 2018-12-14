@@ -1,11 +1,11 @@
 import React from 'react'
-import Spinner from "../../components/Spinner"
+import Spinner from '../../components/Spinner'
 
 const VideoDetail = ({ video }) => {
   if (!video) {
     return (
       <div className="ui embed">
-        <Spinner message="Please choose the video!"/>
+        <Spinner message="Please choose the video!" />
       </div>
     )
   }

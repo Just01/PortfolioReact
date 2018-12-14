@@ -1,8 +1,8 @@
 import React from 'react'
 import PostUserInfo from "./PostUserInfo"
 
-const PostItem = (props) => {
-  const { title, body } = props.post
+const PostItem = ({ post }) => {
+  const { title, body } = post
   return (
     <div className="item">
       <i className="large middle aligned icon user" />
@@ -11,7 +11,7 @@ const PostItem = (props) => {
           <h2>{title}</h2>
           <p>{body}</p>
         </div>
-        <PostUserInfo />
+        <PostUserInfo userId={post.userId} />
       </div>
     </div>
   )

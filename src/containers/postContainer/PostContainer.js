@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPost } from "../../actions/MediaActions"
-import PostItem from "./PostItem"
+import { fetchPost } from '../../actions/MediaActions'
+import PostItem from './PostItem'
 
 class PostContainer extends React.Component {
   componentDidMount() {
@@ -9,9 +9,9 @@ class PostContainer extends React.Component {
   }
 
   renderPostList = (posts) => {
-    return posts.map(post => {
+    return posts.map((post) => {
       return (
-        <PostItem key={post.id} post={post}/>
+        <PostItem key={post.id} post={post} />
       )
     })
   }

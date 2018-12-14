@@ -1,4 +1,4 @@
-import youtube from "../api/youtube"
+import youtube from '../api/youtube'
 import jsonPlaceholder from '../api/jsonPlaceholder'
 
 // ********************* SONG *********************
@@ -12,7 +12,7 @@ export const selectSong = song => {
 
 // ********************* VIDEO *********************
 
-export const fetchVideo = (query) => async dispatch => {
+export const fetchVideo = query => async (dispatch) => {
   const response = await youtube.get('/search', { params: { q: query } })
 
   dispatch({ type: 'FETCH_VIDEO', payload: response.data.items })
@@ -33,7 +33,7 @@ export const fetchPost = () => async dispatch => {
   dispatch({ type: 'FETCH_POST', payload: response.data })
 }
 
-export const fetchUser = (id) => async dispatch => {
+export const fetchUser = id => async dispatch => {
   const response = await jsonPlaceholder.get(`/users/${id}`)
 
   dispatch({ type: 'FETCH_USER', payload: response.data })

@@ -21,6 +21,7 @@
     "no-plusplus": "off",
     "camelcase": "off",
     "no-nested-ternary": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "arrow-parens": "off",
   }
 }

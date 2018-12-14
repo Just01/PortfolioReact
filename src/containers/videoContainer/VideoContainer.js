@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SearchBar from '../../components/SearchBar'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
-import { fetchVideo, selectVideo } from "../../actions/MediaActions"
+import { fetchVideo, selectVideo } from '../../actions/MediaActions'
 
 class VideoContainer extends React.Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class VideoContainer extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { videos, selectVideo } = this.props
-    if (videos && videos !== nextProps.videos)  {
+    if (videos && videos !== nextProps.videos) {
       selectVideo(nextProps.videos[0])
     }
   }
@@ -34,7 +34,7 @@ class VideoContainer extends React.Component {
               <VideoDetail video={video} />
             </div>
             <div className="five wide column">
-              <VideoList onSelect={video => selectVideo(video)} videos={videos}/>
+              <VideoList onSelect={video => selectVideo(video)} videos={videos} />
             </div>
           </div>
         </div>

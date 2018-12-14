@@ -3,8 +3,8 @@ import {
   songsReducer, selectedSongsReducer,
   videoReducer, selectedVideoReducer,
   imageReducer, selectedImageReducer,
-  postsReducer,
-} from "./MediaReducers"
+  postsReducer, usersReducer,
+} from './MediaReducers'
 
 export default combineReducers({
   songs: songsReducer,
@@ -17,4 +17,5 @@ export default combineReducers({
   selectedImage: selectedImageReducer,
 
   posts: postsReducer,
+  users: usersReducer,
 })
