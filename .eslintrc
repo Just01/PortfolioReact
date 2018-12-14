@@ -23,5 +23,6 @@
     "no-nested-ternary": "off",
     "no-shadow": "off",
     "arrow-parens": "off",
+    "no-underscore-dangle":"off"
   }
 }
