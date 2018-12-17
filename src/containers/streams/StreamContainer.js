@@ -1,14 +1,15 @@
 import React from 'react'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
-import { StreamCreate, StreamDelete, StreamDetail, StreamEdit, StreamList } from './streams'
+import { BrowserRouter, Route } from 'react-router-dom'
+import { StreamCreate, StreamDelete, StreamDetail, StreamEdit, StreamList, Header } from './streams'
 
 export default class StreamContainer extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="ui container">
         <BrowserRouter>
           <div>
+            <Header />
             <Route path="/" exact component={StreamList}/>
             <Route path="/streams/new" exact component={StreamCreate}/>
             <Route path="/streams/edit" exact component={StreamEdit}/>
