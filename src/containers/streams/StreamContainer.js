@@ -21,3 +21,8 @@ export default class StreamContainer extends React.Component {
     )
   }
 }
+
+
+const LoginContainer = () => {
+
+}
