@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchPostsAndUsers } from '../../actions/MediaActions'
+import { fetchPostsAndUsers } from '../../redux/actions/MediaActions'
 import PostItem from './PostItem'
 
 class PostContainer extends React.Component {

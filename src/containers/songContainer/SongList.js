@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { selectSong } from '../../actions/MediaActions'
+import { selectSong } from '../../redux/actions/MediaActions'
 
 class SongList extends Component {
   renderList = () => {

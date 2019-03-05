@@ -6,7 +6,10 @@ import {
   postsReducer, usersReducer,
 } from './MediaReducers'
 
+import authReducer from './AuthReducer'
+
 export default combineReducers({
+  // old one
   songs: songsReducer,
   selectedSong: selectedSongsReducer,
 
@@ -18,4 +21,6 @@ export default combineReducers({
 
   posts: postsReducer,
   users: usersReducer,
+
+  auth: authReducer,
 })

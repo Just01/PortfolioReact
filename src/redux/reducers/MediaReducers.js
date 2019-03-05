@@ -1,4 +1,13 @@
-// ********************* SONG *********************
+import {
+  VIDEO_SELECTED,
+  SONG_SELECTED,
+  FETCH_VIDEO,
+  FETCH_USER,
+  FETCH_POST,
+} from '../actions/MediaActions'
+
+
+// region ********************* SONG *********************
 
 export const songsReducer = () => {
   return [
@@ -10,17 +19,19 @@ export const songsReducer = () => {
 }
 
 export const selectedSongsReducer = (selectedSong = null, action) => {
-  if (action.type === 'SONG_SELECTED') {
+  if (action.type === SONG_SELECTED) {
     return action.payload
   }
   return selectedSong
 }
 
-// ********************* VIDEO *********************
+// endregion
+
+// region ********************* VIDEO *********************
 
 export const videoReducer = (videos = null, action) => {
   switch (action.type) {
-    case 'FETCH_VIDEO':
+    case FETCH_VIDEO:
       return action.payload
     default:
       return videos
@@ -28,13 +39,15 @@ export const videoReducer = (videos = null, action) => {
 }
 
 export const selectedVideoReducer = (selectedVideo = null, action) => {
-  if (action.type === 'VIDEO_SELECTED') {
+  if (action.type === VIDEO_SELECTED) {
     return action.payload
   }
   return selectedVideo
 }
 
-// ********************* IMAGE *********************
+// endregion
+
+//  region ********************* IMAGE *********************
 
 export const imageReducer = (images = null, action) => {
   switch (action.type) {
@@ -52,11 +65,13 @@ export const selectedImageReducer = (selectedImage = null, action) => {
   return selectedImage
 }
 
-// ********************* POST *********************
+// endregion
+
+// region ********************* POST *********************
 
 export const postsReducer = (posts = [], action) => {
   switch (action.type) {
-    case 'FETCH_POST':
+    case FETCH_POST:
       return action.payload
     default:
       return posts
@@ -65,9 +80,11 @@ export const postsReducer = (posts = [], action) => {
 
 export const usersReducer = (users = [], action) => {
   switch (action.type) {
-    case 'FETCH_USER':
+    case FETCH_USER:
       return [...users, action.payload]
     default:
       return users
   }
 }
+
+// endregion

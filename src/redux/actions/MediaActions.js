@@ -1,32 +1,43 @@
 import _ from 'lodash'
-import youtube from '../api/youtube'
-import jsonPlaceholder from '../api/jsonPlaceholder'
+import youtube from '../../api/youtube'
+import jsonPlaceholder from '../../api/jsonPlaceholder'
 
-// ********************* SONG *********************
+
+export const VIDEO_SELECTED = 'VIDEO_SELECTED'
+export const SONG_SELECTED = 'SONG_SELECTED'
+export const FETCH_VIDEO = 'FETCH_VIDEO'
+export const FETCH_USER = 'FETCH_USER'
+export const FETCH_POST = 'FETCH_POST'
+
+// region ********************* SONG *********************
 
 export const selectSong = song => {
   return {
-    type: 'SONG_SELECTED',
+    type: SONG_SELECTED,
     payload: song,
   }
 }
 
-// ********************* VIDEO *********************
+// endregion
+
+// region ********************* VIDEO *********************
 
 export const fetchVideo = query => async (dispatch) => {
   const response = await youtube.get('/search', { params: { q: query } })
 
-  dispatch({ type: 'FETCH_VIDEO', payload: response.data.items })
+  dispatch({ type: FETCH_VIDEO, payload: response.data.items })
 }
 
 export const selectVideo = video => {
   return {
-    type: 'VIDEO_SELECTED',
+    type: VIDEO_SELECTED,
     payload: video,
   }
 }
 
-// ********************* POST *********************
+// endregion
+
+// region ********************* POST *********************
 
 export const fetchPostsAndUsers = () => async (dispatch, getState) => {
   await dispatch(fetchPost())
@@ -41,13 +52,13 @@ export const fetchPostsAndUsers = () => async (dispatch, getState) => {
 export const fetchPost = () => async dispatch => {
   const response = await jsonPlaceholder.get('/posts')
 
-  dispatch({ type: 'FETCH_POST', payload: response.data })
+  dispatch({ type: FETCH_POST, payload: response.data })
 }
 
 export const fetchUser = id => async dispatch => {
   const response = await jsonPlaceholder.get(`/users/${id}`)
 
-  dispatch({ type: 'FETCH_USER', payload: response.data })
+  dispatch({ type: FETCH_USER, payload: response.data })
 }
 
 /*
@@ -60,3 +71,4 @@ const _fetchUser = _.memoize(async (id, dispatch) => {
 })
 */
 
+// endregion

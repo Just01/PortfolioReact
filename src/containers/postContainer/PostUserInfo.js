@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchUser } from '../../actions/MediaActions'
+import { fetchUser } from '../../redux/actions/MediaActions'
 
 class PostUserInfo extends React.Component {
   render() {

@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import SearchBar from '../../components/SearchBar'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
-import { fetchVideo, selectVideo } from '../../actions/MediaActions'
+import { fetchVideo, selectVideo } from '../../redux/actions/MediaActions'
 
 class VideoContainer extends React.Component {
   componentDidMount() {
