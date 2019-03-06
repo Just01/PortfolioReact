@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import { StreamCreate, StreamDelete, StreamDetail, StreamEdit, StreamList, Header } from './streams'
+import { StreamCreate, StreamDelete, StreamDetail, StreamEdit, StreamList } from './streams'
+import Header from './Header'
 
 export default class StreamContainer extends React.Component {
 
